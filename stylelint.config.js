@@ -12,6 +12,8 @@ module.exports = {
     'stylelint-scss'
   ],
   rules: {
+    // we want to have empty script tags in project at least in development for adding styles
+    'no-empty-source': null,
     // ===
     // PRETTIER
     // ===
