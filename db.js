@@ -7,6 +7,7 @@ function generateData() {
     const title = faker.commerce.productName()
     const price = faker.commerce.price()
     const author = faker.name.firstName() + ' ' + faker.name.lastName()
+    const slug = faker.helpers.slugify(title)
     // const coverImage = faker.image.food()
     const date = faker.date
       .between('2018-01-01', '2018-07-31')
@@ -15,6 +16,7 @@ function generateData() {
     // const fromId = faker.random.number({ min: 1000, max: 9999 })
     books.push({
       id,
+      slug,
       ISBN,
       title,
       price,
