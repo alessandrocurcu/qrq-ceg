@@ -7,7 +7,7 @@ function generateData() {
     const title = faker.commerce.productName()
     const price = faker.commerce.price()
     const author = faker.name.firstName() + ' ' + faker.name.lastName()
-    const coverImage = faker.image.food()
+    // const coverImage = faker.image.food()
     const date = faker.date
       .between('2018-01-01', '2018-07-31')
       .toISOString()
@@ -19,7 +19,7 @@ function generateData() {
       title,
       price,
       author,
-      coverImage,
+      // coverImage,
       // from_userId: fromId,
       published: date
     })

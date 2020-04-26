@@ -63,7 +63,12 @@ export default {
       }
     ],
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    [
+      '@nuxtjs/axios',
+      {
+        baseURL: 'http://localhost:4000'
+      }
+    ],
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources'
