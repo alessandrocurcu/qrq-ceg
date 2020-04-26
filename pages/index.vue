@@ -1,6 +1,8 @@
 <template>
   <section>
-    <book-card v-for="book in books" :key="book.id" :book="book" />
+    <div class="columns is-multiline">
+      <book-card v-for="book in books" :key="book.id" :book="book" />
+    </div>
   </section>
 </template>
 
