@@ -1,6 +1,6 @@
 <template>
   <div class="column is-12-tablet is-6-desktop is-4-widescreen">
-    <nuxt-link :to="`/libro/${book.slug}`">
+    <nuxt-link :to="`/libro/${book.id}`">
       <article class="box">
         <div class="media">
           <aside class="media-left">

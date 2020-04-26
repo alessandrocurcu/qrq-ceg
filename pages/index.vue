@@ -7,15 +7,18 @@
 </template>
 
 <script>
+// import { mapState, mapGetters } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
+import BookService from '~/services/BookService.js'
+
 export default {
   name: 'HomePage',
   components: {
     BookCard
   },
-  async asyncData({ $axios, error }) {
+  async asyncData({ error }) {
     try {
-      const res = await $axios.get('/books')
+      const res = await BookService.getBooks()
       const books = res.data.map((book) => {
         book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
         return book
@@ -31,5 +34,9 @@ export default {
       })
     }
   }
+  // computed: {
+  //   ...mapState({ prova: (state) => state.books.prova }),
+  //   ...mapGetters({ getBookById: 'books/getBookById' })
+  // }
 }
 </script>
