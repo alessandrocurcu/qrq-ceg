@@ -1,6 +1,6 @@
 <template>
   <section>
-    <book-card :book="book" />
+    <book-card v-for="book in books" :key="book.id" :book="book" />
   </section>
 </template>
 
@@ -11,17 +11,16 @@ export default {
   components: {
     BookCard
   },
-  data() {
+  async asyncData({ $axios }) {
+    const res = await $axios.get('/books')
+
+    const books = res.data.map((book) => {
+      book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
+      return book
+    })
+
     return {
-      book: {
-        id: 1,
-        ISBN: 1762167,
-        title: 'Catcher in the ray',
-        price: '23.00',
-        author: 'Salinger',
-        coverImage: 'http://lorempixel.com/400/200',
-        published: '12/01/2020'
-      }
+      books
     }
   }
 }
