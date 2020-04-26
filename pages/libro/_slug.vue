@@ -5,23 +5,22 @@
 </template>
 
 <script>
-import BookService from '@/services/BookService.js'
+import { mapState } from 'vuex'
 export default {
-  async asyncData({ error, params }) {
+  async fetch({ store, error, params }) {
     try {
-      const res = await BookService.getBook(parseInt(params.slug))
-      const book = res.data
-      book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
+      await store.dispatch('books/fetchBook', parseInt(params.slug))
 
-      return {
-        book
-      }
+      // book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
     } catch (e) {
       error({
         statusCode: 503,
         message: 'Non sono in grado di recuperare i dati'
       })
     }
+  },
+  computed: {
+    ...mapState({ book: (state) => state.books.book })
   }
 }
 </script>
