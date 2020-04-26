@@ -11,16 +11,22 @@ export default {
   components: {
     BookCard
   },
-  async asyncData({ $axios }) {
-    const res = await $axios.get('/books')
+  async asyncData({ $axios, error }) {
+    try {
+      const res = await $axios.get('/books')
+      const books = res.data.map((book) => {
+        book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
+        return book
+      })
 
-    const books = res.data.map((book) => {
-      book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
-      return book
-    })
-
-    return {
-      books
+      return {
+        books
+      }
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Non sono in grado di recuperare i dati'
+      })
     }
   }
 }
