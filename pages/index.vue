@@ -7,29 +7,33 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
+
 export default {
   name: 'HomePage',
   components: {
     BookCard
   },
-  async asyncData({ $axios, error }) {
+  async fetch({ store, error }) {
     try {
-      const res = await $axios.get('/books')
-      const books = res.data.map((book) => {
-        book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
-        return book
-      })
-
-      return {
-        books
-      }
+      await store.dispatch('books/fetchBooks')
     } catch (e) {
       error({
         statusCode: 503,
         message: 'Non sono in grado di recuperare i dati'
       })
     }
+  },
+  computed: {
+    ...mapState({
+      books: (state) =>
+        state.books.books.map((book) => {
+          book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
+          return book
+        })
+    })
+    // ...mapGetters({ getBookById: 'books/getBookById' })
   }
 }
 </script>
