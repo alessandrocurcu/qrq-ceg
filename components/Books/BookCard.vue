@@ -11,15 +11,15 @@
           <img :src="book.coverImage" width="80" />
         </aside>
         <div class="media-content">
-          <h1 class="title is-5 is-spaced is-marginless">
+          <h1 :class="`title is-${titleSize} is-spaced is-marginless`">
             <!-- <a @click="showEditModal = true">{{ book.title }}</a> -->
             {{ book.title }}
           </h1>
-          <p class="subtitle is-marginless">{{ book.price }}</p>
+          <p class="subtitle is-marginless is-6">{{ book.author }}</p>
           <div class="content is-small">
-            {{ book.author }} <br />
-            ISBN: {{ book.ISBN }}
-            <br />
+            {{ book.price }}
+            <!-- ISBN: {{ book.ISBN }} -->
+            <!-- <br /> -->
             <!-- <a @click="editBook(book)">Aggiugni al carrello</a> -->
             <!-- <a
               class="snipcart-add-item"
@@ -54,6 +54,10 @@ export default {
       type: Object,
       default: () => {},
       required: true
+    },
+    titleSize: {
+      type: Number,
+      default: 5
     }
   },
   methods: {

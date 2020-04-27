@@ -24,11 +24,18 @@
       </b-carousel>
     </section>
     <section class="section">
+      <h1 class="title">I più venduti</h1>
       <div class="columns is-multiline">
-        <book-card v-for="book in bestBooks" :key="book.id" :book="book" />
+        <book-card
+          v-for="book in bestBooks"
+          :key="book.id"
+          :book="book"
+          :title-size="4"
+        />
       </div>
     </section>
     <section class="section">
+      <h1 class="title">I nostri libri</h1>
       <b-field label="Ricerca per titolo o autore">
         <b-autocomplete
           :data="autocompleteData"
