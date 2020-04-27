@@ -24,6 +24,11 @@
       </b-carousel>
     </section>
     <section class="section">
+      <div class="columns is-multiline">
+        <book-card v-for="book in bestBooks" :key="book.id" :book="book" />
+      </div>
+    </section>
+    <section class="section">
       <b-field label="Ricerca per titolo o autore">
         <b-autocomplete
           :data="autocompleteData"
@@ -119,7 +124,7 @@
 
 <script>
 import debounce from 'lodash/debounce'
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
 
 export default {
@@ -171,8 +176,8 @@ export default {
       current: (state) => state.books.currentPage,
       totalBooks: (state) => state.books.totalBooks,
       autocompleteData: (state) => state.books.autocompleteData
-    })
-    // ...mapGetters({ totalBooks: 'books/totalBooks' })
+    }),
+    ...mapGetters({ bestBooks: 'books/bestBooks' })
   },
   watchQuery: ['page'],
   methods: {

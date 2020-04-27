@@ -47,5 +47,6 @@ export const actions = {
 
 export const getters = {
   // totalBooks: (state) => state.books.length,
+  bestBooks: (state) => state.books.filter((book) => book.best).slice(0, 3),
   getBookById: (state) => (id) => state.books.find((book) => book.id === id)
 }
