@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     goToBook(id) {
+      console.log('Ciao')
       this.$router.push({
         path: `/libro/${id}`
       })
