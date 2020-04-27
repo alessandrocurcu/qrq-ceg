@@ -1,222 +1,224 @@
-[
-  {
-    "id": 0,
-    "slug": "Handmade-Granite-Chicken",
-    "ISBN": 2938,
-    "title": "Handmade Granite Chicken",
-    "price": "282.00",
-    "author": "Nannie Cormier",
-    "briefDescription": "Ea voluptas nisi est perspiciatis. Officiis quos ex. Sint rem et quo qui nobis qui ad ab quaerat.",
-    "stock": 8,
-    "published": "2018-06-28"
-  },
-  {
-    "id": 1,
-    "slug": "Tasty-Steel-Chips",
-    "ISBN": 2661,
-    "title": "Tasty Steel Chips",
-    "price": "931.00",
-    "author": "Jakob Bednar",
-    "briefDescription": "Et deserunt ut explicabo hic. Sapiente nisi eius et ut dolores officiis praesentium dolorem. Voluptatum neque impedit maiores magnam maxime et quae neque rerum.",
-    "stock": 1,
-    "published": "2018-06-16"
-  },
-  {
-    "id": 2,
-    "slug": "Practical-Frozen-Car",
-    "ISBN": 4141,
-    "title": "Practical Frozen Car",
-    "price": "707.00",
-    "author": "Rhianna Labadie",
-    "briefDescription": "Quasi natus voluptatem impedit eum velit inventore qui ut. Rerum ea quod. Natus eveniet vel laborum odit voluptate repudiandae.",
-    "stock": 2,
-    "published": "2018-02-23"
-  },
-  {
-    "id": 3,
-    "slug": "Unbranded-Rubber-Sausages",
-    "ISBN": 7083,
-    "title": "Unbranded Rubber Sausages",
-    "price": "144.00",
-    "author": "Calista Kuphal",
-    "briefDescription": "Eos accusantium voluptate voluptatem reprehenderit hic omnis delectus et. Quia nulla similique ipsum. Eius molestiae aut voluptates quis porro culpa enim.",
-    "stock": 9,
-    "published": "2018-02-01"
-  },
-  {
-    "id": 4,
-    "slug": "Refined-Granite-Pizza",
-    "ISBN": 9909,
-    "title": "Refined Granite Pizza",
-    "price": "992.00",
-    "author": "Jettie McDermott",
-    "briefDescription": "Voluptas aliquid in sint sed alias repellendus voluptatem quis incidunt. Tempore quos voluptatem voluptas et quae vitae aut aut. Harum repellat consectetur animi expedita nulla.",
-    "stock": 3,
-    "published": "2018-04-03"
-  },
-  {
-    "id": 5,
-    "slug": "Practical-Cotton-Sausages",
-    "ISBN": 2665,
-    "title": "Practical Cotton Sausages",
-    "price": "447.00",
-    "author": "Lenore Nader",
-    "briefDescription": "Ullam nesciunt non velit. Qui occaecati qui vel. Dolor qui officia voluptas velit sit aut ut adipisci est.",
-    "stock": 8,
-    "published": "2018-03-08"
-  },
-  {
-    "id": 6,
-    "slug": "Licensed-Soft-Gloves",
-    "ISBN": 4891,
-    "title": "Licensed Soft Gloves",
-    "price": "652.00",
-    "author": "Dayana Kemmer",
-    "briefDescription": "Praesentium esse dolorem soluta omnis error tempore rem totam quo. Autem molestiae est qui beatae et a iusto commodi sunt. Officia libero non doloremque consectetur.",
-    "stock": 5,
-    "published": "2018-06-15"
-  },
-  {
-    "id": 7,
-    "slug": "Tasty-Granite-Bacon",
-    "ISBN": 8739,
-    "title": "Tasty Granite Bacon",
-    "price": "12.00",
-    "author": "Orin O'Hara",
-    "briefDescription": "Et aut voluptatem saepe. Voluptas fuga doloremque hic laborum et dolorem quas. Eum ut libero nulla qui quod blanditiis perferendis.",
-    "stock": 7,
-    "published": "2018-02-05"
-  },
-  {
-    "id": 8,
-    "slug": "Tasty-Soft-Computer",
-    "ISBN": 8063,
-    "title": "Tasty Soft Computer",
-    "price": "606.00",
-    "author": "Filiberto Schuppe",
-    "briefDescription": "Quibusdam vitae ad quia dignissimos minus sequi temporibus est. Sit sed delectus et fugit debitis odit ut distinctio. Similique rerum impedit cumque.",
-    "stock": 5,
-    "published": "2018-03-25"
-  },
-  {
-    "id": 9,
-    "slug": "Handcrafted-Frozen-Chair",
-    "ISBN": 7240,
-    "title": "Handcrafted Frozen Chair",
-    "price": "564.00",
-    "author": "Wilfred Breitenberg",
-    "briefDescription": "Nam iste est nostrum deserunt eos et. Rerum impedit nam consectetur repellendus tempora. Dolorem distinctio odio ut ullam rerum.",
-    "stock": 9,
-    "published": "2018-02-10"
-  },
-  {
-    "id": 10,
-    "slug": "Fantastic-Steel-Tuna",
-    "ISBN": 4781,
-    "title": "Fantastic Steel Tuna",
-    "price": "816.00",
-    "author": "Eloy Heidenreich",
-    "briefDescription": "Sint voluptatem voluptatibus est iste eum eos reprehenderit quo. Eveniet nemo repellendus ut error ut. Id iste sapiente rerum omnis impedit.",
-    "stock": 5,
-    "published": "2018-01-12"
-  },
-  {
-    "id": 11,
-    "slug": "Tasty-Wooden-Fish",
-    "ISBN": 6164,
-    "title": "Tasty Wooden Fish",
-    "price": "697.00",
-    "author": "Ariane Nolan",
-    "briefDescription": "Quae corrupti non inventore assumenda dolor quibusdam vitae nulla nobis. Dolorem perspiciatis aliquam voluptatem repudiandae natus est veniam. A eveniet ipsum iste officia.",
-    "stock": 8,
-    "published": "2018-05-07"
-  },
-  {
-    "id": 12,
-    "slug": "Practical-Granite-Chair",
-    "ISBN": 1027,
-    "title": "Practical Granite Chair",
-    "price": "5.00",
-    "author": "Aron Jacobs",
-    "briefDescription": "Quia quas et ut sit qui velit illo animi nihil. Ea quidem corrupti qui et. Odio cumque adipisci aspernatur et voluptates tempora qui temporibus.",
-    "stock": 5,
-    "published": "2018-01-22"
-  },
-  {
-    "id": 13,
-    "slug": "Incredible-Fresh-Hat",
-    "ISBN": 9296,
-    "title": "Incredible Fresh Hat",
-    "price": "821.00",
-    "author": "Kaci Robel",
-    "briefDescription": "Qui optio id sit alias recusandae impedit et nihil. Recusandae mollitia placeat rerum voluptas et sit. Repellendus recusandae voluptatum.",
-    "stock": 1,
-    "published": "2018-03-08"
-  },
-  {
-    "id": 14,
-    "slug": "Intelligent-Granite-Pizza",
-    "ISBN": 2661,
-    "title": "Intelligent Granite Pizza",
-    "price": "485.00",
-    "author": "Kasey Gottlieb",
-    "briefDescription": "Sed nisi dicta sint. Adipisci cupiditate repellat in voluptatibus reiciendis. Explicabo quia reiciendis aut eos.",
-    "stock": 6,
-    "published": "2018-02-02"
-  },
-  {
-    "id": 15,
-    "slug": "Generic-Granite-Chair",
-    "ISBN": 6711,
-    "title": "Generic Granite Chair",
-    "price": "862.00",
-    "author": "Montana Baumbach",
-    "briefDescription": "Cum atque rem accusamus. A earum vitae velit quam consequuntur. Nesciunt illo sed deleniti magnam molestiae porro ab perspiciatis optio.",
-    "stock": 8,
-    "published": "2018-04-12"
-  },
-  {
-    "id": 16,
-    "slug": "Awesome-Steel-Mouse",
-    "ISBN": 6290,
-    "title": "Awesome Steel Mouse",
-    "price": "891.00",
-    "author": "Melody Tromp",
-    "briefDescription": "Qui velit et. Delectus est temporibus aliquid adipisci sit nihil hic nihil eius. Unde ad soluta repudiandae neque magnam sint.",
-    "stock": 10,
-    "published": "2018-04-13"
-  },
-  {
-    "id": 17,
-    "slug": "Gorgeous-Concrete-Chair",
-    "ISBN": 5895,
-    "title": "Gorgeous Concrete Chair",
-    "price": "444.00",
-    "author": "Carter Pfannerstill",
-    "briefDescription": "Delectus itaque repellat temporibus voluptates omnis aliquam consequatur. Distinctio consequatur velit dolore ut a libero. Ipsa non impedit minima quidem voluptas numquam quisquam.",
-    "stock": 7,
-    "published": "2018-07-01"
-  },
-  {
-    "id": 18,
-    "slug": "Generic-Plastic-Bike",
-    "ISBN": 6092,
-    "title": "Generic Plastic Bike",
-    "price": "130.00",
-    "author": "Lizzie Hansen",
-    "briefDescription": "Omnis maxime qui animi dolorem quae. Voluptatem dolorem rerum praesentium quia quo accusamus magnam minima eum. Dolores ducimus voluptatem excepturi corrupti magnam.",
-    "stock": 8,
-    "published": "2018-03-28"
-  },
-  {
-    "id": 19,
-    "slug": "Generic-Concrete-Sausages",
-    "ISBN": 1386,
-    "title": "Generic Concrete Sausages",
-    "price": "117.00",
-    "author": "Charles Grant",
-    "briefDescription": "Est cupiditate modi eos commodi laborum asperiores deleniti. Numquam ut ab temporibus quis repellat doloremque repudiandae quae qui. Mollitia voluptatum voluptatem rerum neque non perferendis sint.",
-    "stock": 5,
-    "published": "2018-06-06"
-  }
-]
+{
+  "books": [
+    {
+      "id": 0,
+      "slug": "Handmade-Granite-Chicken",
+      "ISBN": 2938,
+      "title": "Handmade Granite Chicken",
+      "price": "282.00",
+      "author": "Nannie Cormier",
+      "briefDescription": "Ea voluptas nisi est perspiciatis. Officiis quos ex. Sint rem et quo qui nobis qui ad ab quaerat.",
+      "stock": 8,
+      "published": "2018-06-28"
+    },
+    {
+      "id": 1,
+      "slug": "Tasty-Steel-Chips",
+      "ISBN": 2661,
+      "title": "Tasty Steel Chips",
+      "price": "931.00",
+      "author": "Jakob Bednar",
+      "briefDescription": "Et deserunt ut explicabo hic. Sapiente nisi eius et ut dolores officiis praesentium dolorem. Voluptatum neque impedit maiores magnam maxime et quae neque rerum.",
+      "stock": 1,
+      "published": "2018-06-16"
+    },
+    {
+      "id": 2,
+      "slug": "Practical-Frozen-Car",
+      "ISBN": 4141,
+      "title": "Practical Frozen Car",
+      "price": "707.00",
+      "author": "Rhianna Labadie",
+      "briefDescription": "Quasi natus voluptatem impedit eum velit inventore qui ut. Rerum ea quod. Natus eveniet vel laborum odit voluptate repudiandae.",
+      "stock": 2,
+      "published": "2018-02-23"
+    },
+    {
+      "id": 3,
+      "slug": "Unbranded-Rubber-Sausages",
+      "ISBN": 7083,
+      "title": "Unbranded Rubber Sausages",
+      "price": "144.00",
+      "author": "Calista Kuphal",
+      "briefDescription": "Eos accusantium voluptate voluptatem reprehenderit hic omnis delectus et. Quia nulla similique ipsum. Eius molestiae aut voluptates quis porro culpa enim.",
+      "stock": 9,
+      "published": "2018-02-01"
+    },
+    {
+      "id": 4,
+      "slug": "Refined-Granite-Pizza",
+      "ISBN": 9909,
+      "title": "Refined Granite Pizza",
+      "price": "992.00",
+      "author": "Jettie McDermott",
+      "briefDescription": "Voluptas aliquid in sint sed alias repellendus voluptatem quis incidunt. Tempore quos voluptatem voluptas et quae vitae aut aut. Harum repellat consectetur animi expedita nulla.",
+      "stock": 3,
+      "published": "2018-04-03"
+    },
+    {
+      "id": 5,
+      "slug": "Practical-Cotton-Sausages",
+      "ISBN": 2665,
+      "title": "Practical Cotton Sausages",
+      "price": "447.00",
+      "author": "Lenore Nader",
+      "briefDescription": "Ullam nesciunt non velit. Qui occaecati qui vel. Dolor qui officia voluptas velit sit aut ut adipisci est.",
+      "stock": 8,
+      "published": "2018-03-08"
+    },
+    {
+      "id": 6,
+      "slug": "Licensed-Soft-Gloves",
+      "ISBN": 4891,
+      "title": "Licensed Soft Gloves",
+      "price": "652.00",
+      "author": "Dayana Kemmer",
+      "briefDescription": "Praesentium esse dolorem soluta omnis error tempore rem totam quo. Autem molestiae est qui beatae et a iusto commodi sunt. Officia libero non doloremque consectetur.",
+      "stock": 5,
+      "published": "2018-06-15"
+    },
+    {
+      "id": 7,
+      "slug": "Tasty-Granite-Bacon",
+      "ISBN": 8739,
+      "title": "Tasty Granite Bacon",
+      "price": "12.00",
+      "author": "Orin O'Hara",
+      "briefDescription": "Et aut voluptatem saepe. Voluptas fuga doloremque hic laborum et dolorem quas. Eum ut libero nulla qui quod blanditiis perferendis.",
+      "stock": 7,
+      "published": "2018-02-05"
+    },
+    {
+      "id": 8,
+      "slug": "Tasty-Soft-Computer",
+      "ISBN": 8063,
+      "title": "Tasty Soft Computer",
+      "price": "606.00",
+      "author": "Filiberto Schuppe",
+      "briefDescription": "Quibusdam vitae ad quia dignissimos minus sequi temporibus est. Sit sed delectus et fugit debitis odit ut distinctio. Similique rerum impedit cumque.",
+      "stock": 5,
+      "published": "2018-03-25"
+    },
+    {
+      "id": 9,
+      "slug": "Handcrafted-Frozen-Chair",
+      "ISBN": 7240,
+      "title": "Handcrafted Frozen Chair",
+      "price": "564.00",
+      "author": "Wilfred Breitenberg",
+      "briefDescription": "Nam iste est nostrum deserunt eos et. Rerum impedit nam consectetur repellendus tempora. Dolorem distinctio odio ut ullam rerum.",
+      "stock": 9,
+      "published": "2018-02-10"
+    },
+    {
+      "id": 10,
+      "slug": "Fantastic-Steel-Tuna",
+      "ISBN": 4781,
+      "title": "Fantastic Steel Tuna",
+      "price": "816.00",
+      "author": "Eloy Heidenreich",
+      "briefDescription": "Sint voluptatem voluptatibus est iste eum eos reprehenderit quo. Eveniet nemo repellendus ut error ut. Id iste sapiente rerum omnis impedit.",
+      "stock": 5,
+      "published": "2018-01-12"
+    },
+    {
+      "id": 11,
+      "slug": "Tasty-Wooden-Fish",
+      "ISBN": 6164,
+      "title": "Tasty Wooden Fish",
+      "price": "697.00",
+      "author": "Ariane Nolan",
+      "briefDescription": "Quae corrupti non inventore assumenda dolor quibusdam vitae nulla nobis. Dolorem perspiciatis aliquam voluptatem repudiandae natus est veniam. A eveniet ipsum iste officia.",
+      "stock": 8,
+      "published": "2018-05-07"
+    },
+    {
+      "id": 12,
+      "slug": "Practical-Granite-Chair",
+      "ISBN": 1027,
+      "title": "Practical Granite Chair",
+      "price": "5.00",
+      "author": "Aron Jacobs",
+      "briefDescription": "Quia quas et ut sit qui velit illo animi nihil. Ea quidem corrupti qui et. Odio cumque adipisci aspernatur et voluptates tempora qui temporibus.",
+      "stock": 5,
+      "published": "2018-01-22"
+    },
+    {
+      "id": 13,
+      "slug": "Incredible-Fresh-Hat",
+      "ISBN": 9296,
+      "title": "Incredible Fresh Hat",
+      "price": "821.00",
+      "author": "Kaci Robel",
+      "briefDescription": "Qui optio id sit alias recusandae impedit et nihil. Recusandae mollitia placeat rerum voluptas et sit. Repellendus recusandae voluptatum.",
+      "stock": 1,
+      "published": "2018-03-08"
+    },
+    {
+      "id": 14,
+      "slug": "Intelligent-Granite-Pizza",
+      "ISBN": 2661,
+      "title": "Intelligent Granite Pizza",
+      "price": "485.00",
+      "author": "Kasey Gottlieb",
+      "briefDescription": "Sed nisi dicta sint. Adipisci cupiditate repellat in voluptatibus reiciendis. Explicabo quia reiciendis aut eos.",
+      "stock": 6,
+      "published": "2018-02-02"
+    },
+    {
+      "id": 15,
+      "slug": "Generic-Granite-Chair",
+      "ISBN": 6711,
+      "title": "Generic Granite Chair",
+      "price": "862.00",
+      "author": "Montana Baumbach",
+      "briefDescription": "Cum atque rem accusamus. A earum vitae velit quam consequuntur. Nesciunt illo sed deleniti magnam molestiae porro ab perspiciatis optio.",
+      "stock": 8,
+      "published": "2018-04-12"
+    },
+    {
+      "id": 16,
+      "slug": "Awesome-Steel-Mouse",
+      "ISBN": 6290,
+      "title": "Awesome Steel Mouse",
+      "price": "891.00",
+      "author": "Melody Tromp",
+      "briefDescription": "Qui velit et. Delectus est temporibus aliquid adipisci sit nihil hic nihil eius. Unde ad soluta repudiandae neque magnam sint.",
+      "stock": 10,
+      "published": "2018-04-13"
+    },
+    {
+      "id": 17,
+      "slug": "Gorgeous-Concrete-Chair",
+      "ISBN": 5895,
+      "title": "Gorgeous Concrete Chair",
+      "price": "444.00",
+      "author": "Carter Pfannerstill",
+      "briefDescription": "Delectus itaque repellat temporibus voluptates omnis aliquam consequatur. Distinctio consequatur velit dolore ut a libero. Ipsa non impedit minima quidem voluptas numquam quisquam.",
+      "stock": 7,
+      "published": "2018-07-01"
+    },
+    {
+      "id": 18,
+      "slug": "Generic-Plastic-Bike",
+      "ISBN": 6092,
+      "title": "Generic Plastic Bike",
+      "price": "130.00",
+      "author": "Lizzie Hansen",
+      "briefDescription": "Omnis maxime qui animi dolorem quae. Voluptatem dolorem rerum praesentium quia quo accusamus magnam minima eum. Dolores ducimus voluptatem excepturi corrupti magnam.",
+      "stock": 8,
+      "published": "2018-03-28"
+    },
+    {
+      "id": 19,
+      "slug": "Generic-Concrete-Sausages",
+      "ISBN": 1386,
+      "title": "Generic Concrete Sausages",
+      "price": "117.00",
+      "author": "Charles Grant",
+      "briefDescription": "Est cupiditate modi eos commodi laborum asperiores deleniti. Numquam ut ab temporibus quis repellat doloremque repudiandae quae qui. Mollitia voluptatum voluptatem rerum neque non perferendis sint.",
+      "stock": 5,
+      "published": "2018-06-06"
+    }
+  ]
+}
