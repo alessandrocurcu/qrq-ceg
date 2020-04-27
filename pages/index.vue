@@ -35,10 +35,11 @@
         :pause-info="false"
         :interval="4500"
         :repeat="true"
+        :indicator-inside="false"
       >
         <b-carousel-item v-for="(slide, i) in carousels2" :key="i">
           <section class="hero is-medium is-bold">
-            <div class=" section columns is-multiline">
+            <div class="columns is-multiline">
               <book-card
                 v-for="book in bestBooks.slice(slide.start, slide.end)"
                 :key="book.id"
@@ -164,7 +165,7 @@ export default {
   async fetch({ store, error, query }) {
     try {
       await store.dispatch('books/fetchBooks', {
-        perPage: 6,
+        perPage: 12,
         page: query.page || 1
       })
       await store.dispatch('books/fetchBestBooks')
@@ -177,7 +178,7 @@ export default {
   },
   data() {
     return {
-      perPage: 6,
+      perPage: 12,
       rangeBefore: 1,
       rangeAfter: 1,
       order: 'is-centered',

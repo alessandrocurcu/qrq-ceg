@@ -75,8 +75,8 @@ export default {
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(-2px);
-    @include box_shadow(3);
+    transform: translateY(-1px);
+    @include box_shadow(2);
   }
 }
 </style>
