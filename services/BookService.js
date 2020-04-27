@@ -19,5 +19,8 @@ export default {
   },
   getAutocompleteBooks(name, perPage, page) {
     return apiClient.get(`/books?q=${name}&_limit=${perPage}&_page=${page}`)
+  },
+  getBestBooks() {
+    return apiClient.get(`/books?best=${true}`)
   }
 }

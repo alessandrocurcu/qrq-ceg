@@ -14,10 +14,10 @@
         :interval="4500"
         :repeat="true"
       >
-        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-          <section :class="`hero is-medium is-${carousel.color} is-bold`">
+        <b-carousel-item v-for="(slide, i) in carousels" :key="i">
+          <section :class="`hero is-medium is-${slide.color} is-bold`">
             <div class="hero-body has-text-centered">
-              <h1 class="title">{{ carousel.title }}</h1>
+              <h1 class="title">{{ slide.title }}</h1>
             </div>
           </section>
         </b-carousel-item>
@@ -67,7 +67,12 @@
         </b-autocomplete>
       </b-field>
       <div class="columns is-multiline">
-        <book-card v-for="book in books" :key="book.id" :book="book" />
+        <book-card
+          v-for="book in books"
+          :key="book.id"
+          :column="{ tablet: 6, desktop: 4, widescreen: 3 }"
+          :book="book"
+        />
       </div>
       <hr />
       <b-pagination
@@ -124,7 +129,7 @@
 
 <script>
 import debounce from 'lodash/debounce'
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
 
 export default {
@@ -138,6 +143,7 @@ export default {
         perPage: 6,
         page: query.page || 1
       })
+      await store.dispatch('books/fetchBestBooks')
     } catch (e) {
       error({
         statusCode: 503,
@@ -175,9 +181,10 @@ export default {
       books: (state) => state.books.books,
       current: (state) => state.books.currentPage,
       totalBooks: (state) => state.books.totalBooks,
-      autocompleteData: (state) => state.books.autocompleteData
-    }),
-    ...mapGetters({ bestBooks: 'books/bestBooks' })
+      autocompleteData: (state) => state.books.autocompleteData,
+      bestBooks: (state) => state.books.bestBooks
+    })
+    // ...mapGetters({ bestBooks: 'books/bestBooks' })
   },
   watchQuery: ['page'],
   methods: {

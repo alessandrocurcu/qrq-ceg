@@ -1,6 +1,8 @@
 <template>
   <div
-    class="column is-12-tablet is-6-desktop is-4-widescreen"
+    :class="
+      `column is-${column.tablet}-tablet is-${column.desktop}-desktop is-${column.widescreen}-widescreen`
+    "
     @click="goToBook(book.id)"
   >
     <article class="box book-card">
@@ -42,6 +44,12 @@
 export default {
   name: 'BookCard',
   props: {
+    column: {
+      type: Object,
+      default: () => {
+        return { tablet: 12, desktop: 6, widescreen: 4 }
+      }
+    },
     book: {
       type: Object,
       default: () => {},
