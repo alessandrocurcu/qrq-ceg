@@ -6,7 +6,7 @@
     <hr />
     <b-pagination
       icon-pack="fas"
-      :total="total"
+      :total="totalBooks"
       :current.sync="current"
       :range-before="rangeBefore"
       :range-after="rangeAfter"
@@ -37,7 +37,7 @@
         slot-scope="props"
         :page="props.page"
         tag="nuxt-link"
-        :to="{ name: 'index', query: { page: props.page.number - 1 } }"
+        :to="{ name: 'index', query: { page: props.page.number } }"
       >
         Previous
       </b-pagination-button>
@@ -47,7 +47,7 @@
         slot-scope="props"
         :page="props.page"
         tag="nuxt-link"
-        :to="{ name: 'index', query: { page: props.page.number + 1 } }"
+        :to="{ name: 'index', query: { page: props.page.number } }"
       >
         Next
       </b-pagination-button>
@@ -79,7 +79,6 @@ export default {
   },
   data() {
     return {
-      total: 10,
       perPage: 6,
       rangeBefore: 1,
       rangeAfter: 1,
@@ -96,9 +95,10 @@ export default {
           book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
           return book
         }),
-      current: (state) => state.books.currentPage
+      current: (state) => state.books.currentPage,
+      totalBooks: (state) => state.books.totalBooks
     })
-    // ...mapGetters({ getBookById: 'books/getBookById' })
+    // ...mapGetters({ totalBooks: 'books/totalBooks' })
   },
   watchQuery: ['page']
 }

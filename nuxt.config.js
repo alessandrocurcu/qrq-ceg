@@ -1,3 +1,4 @@
+import BookService from './services/BookService.js'
 export default {
   mode: 'universal',
   /*
@@ -84,6 +85,16 @@ export default {
   /*
    ** Build configuration
    */
+  generate: {
+    routes: () => {
+      return BookService.getBooks().then((res) => {
+        return res.data.map((book) => {
+          return '/libro/' + book.id
+        })
+      })
+    }
+  },
+
   build: {
     /*
      ** You can extend webpack config here
