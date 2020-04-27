@@ -1,6 +1,5 @@
 <template>
   <section>
-    <p class="content"><b>Selected:</b> {{ selected }}</p>
     <b-field>
       <b-autocomplete
         :data="autocompleteData"
@@ -11,22 +10,22 @@
         :loading="isFetching"
         :check-infinite-scroll="true"
         @typing="getAsyncData"
-        @select="(option) => (selected = option)"
+        @select="goToBook"
         @infinite-scroll="getMoreAsyncData"
       >
         <template slot-scope="props">
           <div class="media">
             <div class="media-left">
               <p class="image is-64x64">
-                <img :src="`https://source.unsplash.com/500x500/?books`" />
+                <img :src="props.option.coverImage" />
               </p>
             </div>
             <div class="media-content">
               {{ props.option.title }}
               <br />
               <small>
-                Released at {{ props.option.release_date }}, rated
-                <b>{{ props.option.vote_average }}</b>
+                Pubblicato {{ props.option.published }}, di
+                <b>{{ props.option.author }}</b>
               </small>
             </div>
           </div>
@@ -134,11 +133,7 @@ export default {
   },
   computed: {
     ...mapState({
-      books: (state) =>
-        state.books.books.map((book) => {
-          book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
-          return book
-        }),
+      books: (state) => state.books.books,
       current: (state) => state.books.currentPage,
       totalBooks: (state) => state.books.totalBooks,
       autocompleteData: (state) => state.books.autocompleteData
@@ -147,6 +142,11 @@ export default {
   },
   watchQuery: ['page'],
   methods: {
+    goToBook(option) {
+      this.$router.push({
+        path: `/libro/${option.id}`
+      })
+    },
     getAsyncData: debounce(function(name) {
       // String update
       if (this.name !== name) {
