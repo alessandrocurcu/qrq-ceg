@@ -3,7 +3,8 @@ export const state = () => ({
   books: [],
   book: {},
   currentPage: 1,
-  totalBooks: 10
+  totalBooks: 10,
+  autocompleteData: []
 })
 
 export const mutations = {
@@ -18,6 +19,9 @@ export const mutations = {
   },
   SET_TOTAL_NUMBER_OF_BOOKS(state, totalBooks) {
     state.totalBooks = totalBooks
+  },
+  SET_AUTOCOMPLETE_DATA(state, books) {
+    state.autocompleteData = books
   }
 }
 
@@ -32,6 +36,11 @@ export const actions = {
   fetchBook({ commit }, id) {
     return BookService.getBook(id).then((res) => {
       commit('SET_BOOK', res.data)
+    })
+  },
+  fetchAutocompleteBooks({ commit }, { name, perPage, page }) {
+    return BookService.getAutocompleteBooks(name, perPage, page).then((res) => {
+      commit('SET_AUTOCOMPLETE_DATA', res.data)
     })
   }
 }

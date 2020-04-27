@@ -10,8 +10,6 @@ export default {
   async fetch({ store, error, params }) {
     try {
       await store.dispatch('books/fetchBook', parseInt(params.slug))
-
-      // book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
     } catch (e) {
       error({
         statusCode: 503,
