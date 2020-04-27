@@ -22,6 +22,35 @@
       aria-page-label="Pagina"
       aria-current-label="Pagina Corrente"
     >
+      <b-pagination-button
+        :id="`page${props.page.number}`"
+        slot-scope="props"
+        :page="props.page"
+        tag="nuxt-link"
+        :to="`/?page=${props.page.number}`"
+      >
+        {{ props.page.number }}
+      </b-pagination-button>
+
+      <b-pagination-button
+        slot="previous"
+        slot-scope="props"
+        :page="props.page"
+        tag="nuxt-link"
+        :to="{ name: 'index', query: { page: props.page.number - 1 } }"
+      >
+        Previous
+      </b-pagination-button>
+
+      <b-pagination-button
+        slot="next"
+        slot-scope="props"
+        :page="props.page"
+        tag="nuxt-link"
+        :to="{ name: 'index', query: { page: props.page.number + 1 } }"
+      >
+        Next
+      </b-pagination-button>
     </b-pagination>
   </section>
 </template>
@@ -38,7 +67,7 @@ export default {
   async fetch({ store, error, query }) {
     try {
       await store.dispatch('books/fetchBooks', {
-        perPage: 4,
+        perPage: 6,
         page: query.page || 1
       })
     } catch (e) {
@@ -51,8 +80,7 @@ export default {
   data() {
     return {
       total: 10,
-      current: 1,
-      perPage: 4,
+      perPage: 6,
       rangeBefore: 1,
       rangeAfter: 1,
       order: 'is-centered',
@@ -67,9 +95,11 @@ export default {
         state.books.books.map((book) => {
           book.coverImage = require('~/assets/img/la_tana_del_lupo.jpg')
           return book
-        })
+        }),
+      current: (state) => state.books.currentPage
     })
     // ...mapGetters({ getBookById: 'books/getBookById' })
-  }
+  },
+  watchQuery: ['page']
 }
 </script>
