@@ -3,7 +3,7 @@
     <p class="content"><b>Selected:</b> {{ selected }}</p>
     <b-field>
       <b-autocomplete
-        :data="data"
+        :data="autocompleteData"
         icon-pack="fas"
         icon="search"
         placeholder="Cerca per titolo o autore"
@@ -17,12 +17,9 @@
         <template slot-scope="props">
           <div class="media">
             <div class="media-left">
-              <img
-                width="32"
-                :src="
-                  `https://image.tmdb.org/t/p/w500/${props.option.poster_path}`
-                "
-              />
+              <p class="image is-64x64">
+                <img :src="`https://source.unsplash.com/500x500/?books`" />
+              </p>
             </div>
             <div class="media-content">
               {{ props.option.title }}
@@ -128,7 +125,6 @@ export default {
       size: 'is-small',
       isSimple: false,
       isRounded: true,
-      data: [],
       selected: null,
       isFetching: false,
       name: '',
@@ -144,7 +140,8 @@ export default {
           return book
         }),
       current: (state) => state.books.currentPage,
-      totalBooks: (state) => state.books.totalBooks
+      totalBooks: (state) => state.books.totalBooks,
+      autocompleteData: (state) => state.books.autocompleteData
     })
     // ...mapGetters({ totalBooks: 'books/totalBooks' })
   },
@@ -154,13 +151,15 @@ export default {
       // String update
       if (this.name !== name) {
         this.name = name
-        this.data = []
+        this.$store.commit('books/SET_AUTOCOMPLETE_DATA', [])
+        // this.data = []
         this.page = 1
         this.totalPages = 1
       }
       // String cleared
       if (!name.length) {
-        this.data = []
+        this.$store.commit('books/SET_AUTOCOMPLETE_DATA', [])
+        // this.data = []
         this.page = 1
         this.totalPages = 1
         return
@@ -170,26 +169,33 @@ export default {
         return
       }
       this.isFetching = true
-      this.$axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie?api_key=bb6f51bef07465653c3e553d6ab161a8&query=${name}&page=${this.page}`
-        )
-        .then(({ data }) => {
-          console.log(data)
-          data.results.forEach((item) => this.data.push(item))
+      this.$store.dispatch('books/fetchAutocompleteBooks', {
+        name,
+        perPage: 10,
+        page: this.page
+      })
 
-          this.page++
-          this.totalPages = data.total_pages
-        })
-        .catch((error) => {
-          throw error
-        })
-        .finally(() => {
-          this.isFetching = false
-        })
+      // this.$axios
+      //   .get(
+      //     `https://api.themoviedb.org/3/search/movie?api_key=bb6f51bef07465653c3e553d6ab161a8&query=${name}&page=${this.page}`
+      //   )
+      //   .then(({ data }) => {
+      //     console.log(data)
+      //     data.results.forEach((item) => this.data.push(item))
+
+      //     this.page++
+      //     this.totalPages = data.total_pages
+      //   })
+      //   .catch((error) => {
+      //     throw error
+      //   })
+      //   .finally(() => {
+      //     this.isFetching = false
+      //   })
     }, 500),
     getMoreAsyncData: debounce(function() {
-      this.getAsyncData(this.name)
+      console.log('bounce!')
+      // this.getAsyncData(this.name)
     }, 250)
   }
 }
