@@ -14,16 +14,45 @@
         :interval="4500"
         :repeat="true"
       >
-        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-          <section :class="`hero is-medium is-${carousel.color} is-bold`">
+        <b-carousel-item v-for="(slide, i) in carousels" :key="i">
+          <section :class="`hero is-medium is-${slide.color} is-bold`">
             <div class="hero-body has-text-centered">
-              <h1 class="title">{{ carousel.title }}</h1>
+              <h1 class="title">{{ slide.title }}</h1>
             </div>
           </section>
         </b-carousel-item>
       </b-carousel>
     </section>
     <section class="section">
+      <h1 class="title">I più venduti</h1>
+      <b-carousel
+        v-model="carousel2"
+        :arrow="false"
+        animated="slide"
+        :has-drag="false"
+        :autoplay="false"
+        :pause-hover="false"
+        :pause-info="false"
+        :interval="4500"
+        :repeat="true"
+        :indicator-inside="false"
+      >
+        <b-carousel-item v-for="(slide, i) in carousels2" :key="i">
+          <section class="hero is-medium is-bold">
+            <div class="columns is-multiline">
+              <book-card
+                v-for="book in bestBooks.slice(slide.start, slide.end)"
+                :key="book.id"
+                :book="book"
+                :title-size="4"
+              />
+            </div>
+          </section>
+        </b-carousel-item>
+      </b-carousel>
+    </section>
+    <section class="section">
+      <h1 class="title">I nostri libri</h1>
       <b-field label="Ricerca per titolo o autore">
         <b-autocomplete
           :data="autocompleteData"
@@ -62,7 +91,12 @@
         </b-autocomplete>
       </b-field>
       <div class="columns is-multiline">
-        <book-card v-for="book in books" :key="book.id" :book="book" />
+        <book-card
+          v-for="book in books"
+          :key="book.id"
+          :column="{ tablet: 6, desktop: 4, widescreen: 3 }"
+          :book="book"
+        />
       </div>
       <hr />
       <b-pagination
@@ -123,6 +157,7 @@ import { mapState } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
 
 export default {
+  scrollToTop: false,
   name: 'HomePage',
   components: {
     BookCard
@@ -130,9 +165,10 @@ export default {
   async fetch({ store, error, query }) {
     try {
       await store.dispatch('books/fetchBooks', {
-        perPage: 6,
+        perPage: 12,
         page: query.page || 1
       })
+      await store.dispatch('books/fetchBestBooks')
     } catch (e) {
       error({
         statusCode: 503,
@@ -142,7 +178,7 @@ export default {
   },
   data() {
     return {
-      perPage: 6,
+      perPage: 12,
       rangeBefore: 1,
       rangeAfter: 1,
       order: 'is-centered',
@@ -155,6 +191,7 @@ export default {
       page: 1,
       totalPages: 1,
       carousel: 0,
+      carousel2: 0,
       carousels: [
         { title: 'Slide 1', color: 'dark' },
         { title: 'Slide 2', color: 'primary' },
@@ -162,6 +199,10 @@ export default {
         { title: 'Slide 4', color: 'success' },
         { title: 'Slide 5', color: 'warning' },
         { title: 'Slide 6', color: 'danger' }
+      ],
+      carousels2: [
+        { start: 0, end: 3 },
+        { start: 3, end: 6 }
       ]
     }
   },
@@ -170,9 +211,10 @@ export default {
       books: (state) => state.books.books,
       current: (state) => state.books.currentPage,
       totalBooks: (state) => state.books.totalBooks,
-      autocompleteData: (state) => state.books.autocompleteData
+      autocompleteData: (state) => state.books.autocompleteData,
+      bestBooks: (state) => state.books.bestBooks
     })
-    // ...mapGetters({ totalBooks: 'books/totalBooks' })
+    // ...mapGetters({ bestBooks: 'books/bestBooks' })
   },
   watchQuery: ['page'],
   methods: {

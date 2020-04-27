@@ -2,7 +2,7 @@ const faker = require('faker/locale/it')
 
 function generateData() {
   const books = []
-  for (let id = 0; id < 20; id++) {
+  for (let id = 0; id < 30; id++) {
     const ISBN = faker.helpers.replaceSymbolWithNumber('#############')
     const title = faker.commerce.productName()
     const price = faker.commerce.price(5, 30, 2, '€ ')
@@ -14,6 +14,7 @@ function generateData() {
       min: 0,
       max: 100
     })}/500`
+    const best = faker.random.boolean()
     const date = faker.date
       .between('2018-01-01', '2018-07-31')
       .toISOString()
@@ -29,6 +30,7 @@ function generateData() {
       briefDescription,
       stock,
       coverImage,
+      best,
       // from_userId: fromId,
       published: date
     })
