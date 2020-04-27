@@ -13,7 +13,7 @@
             <!-- <a @click="showEditModal = true">{{ book.title }}</a> -->
             {{ book.title }}
           </h1>
-          <p class="subtitle is-marginless">€ {{ book.price }}</p>
+          <p class="subtitle is-marginless">{{ book.price }}</p>
           <div class="content is-small">
             {{ book.author }} <br />
             ISBN: {{ book.ISBN }}
