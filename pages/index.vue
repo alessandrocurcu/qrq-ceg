@@ -37,7 +37,7 @@
         slot-scope="props"
         :page="props.page"
         tag="nuxt-link"
-        :to="{ name: 'index', query: { page: props.page.number - 1 } }"
+        :to="{ name: 'index', query: { page: props.page.number } }"
       >
         Previous
       </b-pagination-button>
@@ -47,7 +47,7 @@
         slot-scope="props"
         :page="props.page"
         tag="nuxt-link"
-        :to="{ name: 'index', query: { page: props.page.number + 1 } }"
+        :to="{ name: 'index', query: { page: props.page.number } }"
       >
         Next
       </b-pagination-button>
@@ -79,7 +79,7 @@ export default {
   },
   data() {
     return {
-      total: 10,
+      total: 20,
       perPage: 6,
       rangeBefore: 1,
       rangeAfter: 1,

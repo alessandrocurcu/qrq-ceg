@@ -2,7 +2,7 @@ const faker = require('faker')
 
 function generateData() {
   const books = []
-  for (let id = 0; id < 10; id++) {
+  for (let id = 0; id < 20; id++) {
     const ISBN = faker.random.number({ min: 1000, max: 9999 })
     const title = faker.commerce.productName()
     const price = faker.commerce.price()
