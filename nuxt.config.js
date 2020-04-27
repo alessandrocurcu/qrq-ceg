@@ -1,3 +1,4 @@
+import BookService from './services/BookService.js'
 export default {
   mode: 'universal',
   /*
@@ -63,7 +64,12 @@ export default {
       }
     ],
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    [
+      '@nuxtjs/axios',
+      {
+        baseURL: 'http://localhost:4000'
+      }
+    ],
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources'
@@ -79,6 +85,16 @@ export default {
   /*
    ** Build configuration
    */
+  generate: {
+    routes: () => {
+      return BookService.getBooks().then((res) => {
+        return res.data.map((book) => {
+          return '/libro/' + book.id
+        })
+      })
+    }
+  },
+
   build: {
     /*
      ** You can extend webpack config here
