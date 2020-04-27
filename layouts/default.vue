@@ -3,7 +3,7 @@
     <the-navbar />
     <section class="section">
       <div class="container">
-        <nuxt />
+        <nuxt :nuxt-child-key="$route.fullPath" />
       </div>
     </section>
   </div>
