@@ -14,8 +14,8 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchBooks({ commit }) {
-    return BookService.getBooks().then((res) => {
+  fetchBooks({ commit }, { perPage, page }) {
+    return BookService.getBooks(perPage, page).then((res) => {
       commit('SET_BOOKS', res.data)
     })
   },

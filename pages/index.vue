@@ -15,9 +15,12 @@ export default {
   components: {
     BookCard
   },
-  async fetch({ store, error }) {
+  async fetch({ store, error, query }) {
     try {
-      await store.dispatch('books/fetchBooks')
+      await store.dispatch('books/fetchBooks', {
+        perPage: 4,
+        page: query.page || 1
+      })
     } catch (e) {
       error({
         statusCode: 503,
