@@ -25,7 +25,7 @@ export const mutations = {
     state.autocompleteData = books
   },
   SET_BEST_BOOKS(state, books) {
-    state.bestBooks = books.slice(3, 6)
+    state.bestBooks = books.slice(0, 8)
   }
 }
 

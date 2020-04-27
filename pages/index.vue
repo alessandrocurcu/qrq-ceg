@@ -25,14 +25,30 @@
     </section>
     <section class="section">
       <h1 class="title">I più venduti</h1>
-      <div class="columns is-multiline">
-        <book-card
-          v-for="book in bestBooks"
-          :key="book.id"
-          :book="book"
-          :title-size="4"
-        />
-      </div>
+      <b-carousel
+        v-model="carousel2"
+        :arrow="false"
+        animated="slide"
+        :has-drag="false"
+        :autoplay="false"
+        :pause-hover="false"
+        :pause-info="false"
+        :interval="4500"
+        :repeat="true"
+      >
+        <b-carousel-item v-for="(slide, i) in carousels2" :key="i">
+          <section class="hero is-medium is-bold">
+            <div class=" section columns is-multiline">
+              <book-card
+                v-for="book in bestBooks.slice(slide.start, slide.end)"
+                :key="book.id"
+                :book="book"
+                :title-size="4"
+              />
+            </div>
+          </section>
+        </b-carousel-item>
+      </b-carousel>
     </section>
     <section class="section">
       <h1 class="title">I nostri libri</h1>
@@ -140,6 +156,7 @@ import { mapState } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
 
 export default {
+  scrollToTop: false,
   name: 'HomePage',
   components: {
     BookCard
@@ -173,6 +190,7 @@ export default {
       page: 1,
       totalPages: 1,
       carousel: 0,
+      carousel2: 0,
       carousels: [
         { title: 'Slide 1', color: 'dark' },
         { title: 'Slide 2', color: 'primary' },
@@ -180,6 +198,10 @@ export default {
         { title: 'Slide 4', color: 'success' },
         { title: 'Slide 5', color: 'warning' },
         { title: 'Slide 6', color: 'danger' }
+      ],
+      carousels2: [
+        { start: 0, end: 3 },
+        { start: 3, end: 6 }
       ]
     }
   },
