@@ -9,22 +9,22 @@
       </b-navbar-item>
     </template>
     <template slot="start">
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-uno' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/casa-editrice' }">
         Casa Editrice
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/libri' }">
         Libri
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/autori' }">
         Autori
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/contatti' }">
         Contatti
       </b-navbar-item>
     </template>
 
     <template slot="end">
-      <b-navbar-item tag="router-link" to="/">
+      <b-navbar-item tag="router-link" to="/login">
         <b-icon
           icon="user"
           size="is-small"
@@ -32,7 +32,7 @@
         ></b-icon>
         login
       </b-navbar-item>
-      <b-navbar-item tag="router-link" to="/">
+      <b-navbar-item tag="router-link" to="/carrello">
         <b-icon
           icon="shopping-cart"
           size="is-small"
@@ -58,4 +58,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nuxt-link-exact-active {
+  color: #016fb9;
+}
+</style>

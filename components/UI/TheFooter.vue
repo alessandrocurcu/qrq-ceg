@@ -89,7 +89,7 @@
             </a>
           </p>
 
-          <p class="bd-footer-link bd-has-subtitle">
+          <p class="">
             <a href="#">
               <span class="bd-footer-link-icon has-text-danger"> </span>
               <strong>
@@ -101,7 +101,7 @@
             </a>
           </p>
 
-          <p class="bd-footer-link bd-has-subtitle">
+          <p class="">
             <a href="#">
               <span class="bd-footer-link-icon has-text-patreon"> </span>
               <strong>
@@ -112,8 +112,10 @@
               </em>
             </a>
           </p>
+
           <hr />
-          <p class="bd-footer-link bd-has-subtitle">
+
+          <div class="">
             <a href="#">
               <p class="title is-4">
                 Scopri Trentino Mese
@@ -122,7 +124,7 @@
                 Mensile di notizie trentine
               </p>
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </div>
