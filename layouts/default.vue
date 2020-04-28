@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="site">
     <the-navbar />
-    <section>
+    <section class="site-content">
       <div>
         <nuxt :nuxt-child-key="$route.fullPath" />
       </div>
@@ -20,3 +20,14 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+</style>
