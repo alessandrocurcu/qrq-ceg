@@ -17,16 +17,18 @@
           :repeat="true"
         >
           <b-carousel-item v-for="(slide, i) in carousels" :key="i">
-            <section :class="`hero is-medium ${slide.bgc}`">
-              <div class="hero-body has-text-centered">
-                <!-- <img
+            <nuxt-link :to="`/libro/${slide.id}`">
+              <section :class="`hero is-medium ${slide.bgc}`">
+                <div class="hero-body has-text-centered">
+                  <!-- <img
                   src="~/assets/img/slide1.jpg"
                   alt="Logo di Curcu e Genovese Associati"
                 /> -->
 
-                <!-- <h1 class="title">{{ slide.title }}</h1> -->
-              </div>
-            </section>
+                  <!-- <h1 class="title">{{ slide.title }}</h1> -->
+                </div>
+              </section>
+            </nuxt-link>
           </b-carousel-item>
         </b-carousel>
       </div>
@@ -263,9 +265,9 @@ export default {
       carousel: 0,
       carousel2: 0,
       carousels: [
-        { title: 'Slide 1', bgc: 'slide3' },
-        { title: 'Slide 2', bgc: 'slide2' },
-        { title: 'Slide 2', bgc: 'slide1' }
+        { title: 'Slide 1', bgc: 'slide3', id: 1 },
+        { title: 'Slide 2', bgc: 'slide2', id: 2 },
+        { title: 'Slide 2', bgc: 'slide1', id: 3 }
       ],
       carousels2: [
         { start: 0, end: 3 },
