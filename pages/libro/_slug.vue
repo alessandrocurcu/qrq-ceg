@@ -1,7 +1,22 @@
 <template>
-  <div>
-    <h1>{{ book.title }}</h1>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <h1 class="title has-text-weight-light">
+              {{ book.title }}
+              <nuxt-link to="/autori"
+                ><small
+                  ><em>di {{ book.author }}</em></small
+                ></nuxt-link
+              >
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
