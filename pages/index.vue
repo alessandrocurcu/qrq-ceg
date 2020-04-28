@@ -4,6 +4,7 @@
       <div class="container">
         <b-carousel
           v-model="carousel"
+          :indicator="false"
           icon-pack="fas"
           icon-prev="arrow-left"
           icon-next="arrow-right"
@@ -16,9 +17,14 @@
           :repeat="true"
         >
           <b-carousel-item v-for="(slide, i) in carousels" :key="i">
-            <section :class="`hero is-medium is-${slide.color} is-bold`">
+            <section :class="`hero is-medium ${slide.bgc}`">
               <div class="hero-body has-text-centered">
-                <h1 class="title">{{ slide.title }}</h1>
+                <!-- <img
+                  src="~/assets/img/slide1.jpg"
+                  alt="Logo di Curcu e Genovese Associati"
+                /> -->
+
+                <!-- <h1 class="title">{{ slide.title }}</h1> -->
               </div>
             </section>
           </b-carousel-item>
@@ -30,10 +36,14 @@
         <div class="level">
           <div class="level-left">
             <div class="level-item">
-              <b-icon icon="thumbs-up" size="is-medium"></b-icon>
+              <b-icon
+                class="has-text-white-bis"
+                icon="thumbs-up"
+                size="is-medium"
+              ></b-icon>
             </div>
             <div class="level-item">
-              <h1 class="title has-text-weight-light">
+              <h1 class="title has-text-weight-light has-text-white-bis">
                 I più venduti
               </h1>
             </div>
@@ -248,12 +258,9 @@ export default {
       carousel: 0,
       carousel2: 0,
       carousels: [
-        { title: 'Slide 1', color: 'dark' },
-        { title: 'Slide 2', color: 'primary' },
-        { title: 'Slide 3', color: 'info' },
-        { title: 'Slide 4', color: 'success' },
-        { title: 'Slide 5', color: 'warning' },
-        { title: 'Slide 6', color: 'danger' }
+        { title: 'Slide 1', bgc: 'slide3' },
+        { title: 'Slide 2', bgc: 'slide2' },
+        { title: 'Slide 2', bgc: 'slide1' }
       ],
       carousels2: [
         { start: 0, end: 3 },
@@ -348,6 +355,46 @@ export default {
 }
 
 .band {
-  background-color: rgb(255, 179, 98);
+  // background-color: rgb(255, 179, 98);
+  // background-image: linear-gradient(
+  //   141deg,
+  //   #c44307 0%,
+  //   #e97c15 71%,
+  //   #f2ab26 100%
+  // );
+  // background-color: #faff81;
+  // background-color: #fdd774;
+  // background-color: #ff7b00;
+  // background: hsla(29, 100, 50);
+  background: radial-gradient(
+    circle,
+    hsla(29, 100, 50, 1) 0%,
+    hsla(357, 55, 46, 1) 100%
+  );
+}
+
+.prova {
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+
+.slide1 {
+  background-image: url('~assets/img/slide1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 6% 50%;
+}
+
+.slide2 {
+  background-image: url('~assets/img/slide2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 6% 50%;
+}
+
+.slide3 {
+  background-image: url('~assets/img/slide3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 6% 50%;
 }
 </style>

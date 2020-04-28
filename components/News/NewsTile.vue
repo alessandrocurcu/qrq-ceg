@@ -23,7 +23,7 @@
         v-for="item in appointments"
         :key="item.id"
         class="tile is-child"
-        :class="item.callout ? 'notification is-primary' : 'box'"
+        :class="item.callout ? 'box' : 'box'"
       >
         <h2 class="title is-5 has-text-weight-normal">{{ item.title }}</h2>
         <p class="subtitle is-7 has-text-weight-light">
