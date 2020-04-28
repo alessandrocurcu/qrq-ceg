@@ -2,6 +2,7 @@ const faker = require('faker/locale/it')
 
 function generateData() {
   const books = []
+  const news = []
   for (let id = 0; id < 30; id++) {
     const ISBN = faker.helpers.replaceSymbolWithNumber('#############')
     const title = faker.commerce.productName()
@@ -36,7 +37,28 @@ function generateData() {
     })
   }
 
-  return { books }
+  for (let id = 0; id < 6; id++) {
+    const title = faker.lorem.sentences(1)
+    const slug = faker.helpers.slugify(title)
+    const text = faker.lorem.sentences(3)
+    const date = faker.date
+      .between('2018-01-01', '2018-07-31')
+      .toISOString()
+      .split('T')[0]
+    const type = faker.random.boolean()
+
+    news.push({
+      id,
+      slug,
+      title,
+      text,
+      type,
+      // from_userId: fromId,
+      published: date
+    })
+  }
+
+  return { books, news }
 }
 
 module.exports = generateData
