@@ -169,6 +169,7 @@ export default {
         page: query.page || 1
       })
       await store.dispatch('books/fetchBestBooks')
+      await store.dispatch('news/fetchNews')
     } catch (e) {
       error({
         statusCode: 503,
@@ -212,7 +213,8 @@ export default {
       current: (state) => state.books.currentPage,
       totalBooks: (state) => state.books.totalBooks,
       autocompleteData: (state) => state.books.autocompleteData,
-      bestBooks: (state) => state.books.bestBooks
+      bestBooks: (state) => state.books.bestBooks,
+      news: (state) => state.news.news
     })
     // ...mapGetters({ bestBooks: 'books/bestBooks' })
   },
