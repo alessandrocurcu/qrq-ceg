@@ -9,16 +9,16 @@
       </b-navbar-item>
     </template>
     <template slot="start">
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-uno' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/casa-editrice' }">
         Casa Editrice
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/libri' }">
         Libri
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/autori' }">
         Autori
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
+      <b-navbar-item tag="router-link" :to="{ path: '/contatti' }">
         Contatti
       </b-navbar-item>
     </template>
@@ -58,4 +58,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nuxt-link-exact-active {
+  color: #016fb9;
+}
+</style>

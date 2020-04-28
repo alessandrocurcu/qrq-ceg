@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="columns">
-        <div class="column is-4">
+        <!-- <div class="column is-4">
           <p class="subtitle is-5">
             Curcu & Genovese
           </p>
@@ -123,7 +123,7 @@
               </p>
             </a>
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>
