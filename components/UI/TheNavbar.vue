@@ -1,32 +1,52 @@
 <template>
-  <b-navbar type="is-primary">
+  <b-navbar wrapper-class="container" :spaced="true" :transparent="true">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
-          src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
-          alt="Lightweight UI components for Vue.js based on Bulma"
+          src="~/assets/img/logo.jpg"
+          alt="Logo di Curcu e Genovese Associati"
         />
       </b-navbar-item>
     </template>
     <template slot="start">
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-uno' }">
-        Primo Link
+      <b-navbar-item tag="router-link" :to="{ path: '/casa_editrice' }">
+        Casa Editrice
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/libro/prova-due' }">
-        Secondo Link
+      <b-navbar-item tag="router-link" :to="{ path: '/libri' }">
+        Libri
+      </b-navbar-item>
+      <b-navbar-item tag="router-link" :to="{ path: '/autori' }">
+        Autori
+      </b-navbar-item>
+      <b-navbar-item tag="router-link" :to="{ path: '/contatti' }">
+        Contatti
       </b-navbar-item>
     </template>
 
     <template slot="end">
-      <b-navbar-item tag="div">
-        <div class="buttons">
+      <b-navbar-item tag="router-link" to="/login">
+        <b-icon
+          icon="user"
+          size="is-small"
+          style="margin-right: 0.5rem;"
+        ></b-icon>
+        login
+      </b-navbar-item>
+      <b-navbar-item tag="router-link" to="/carrello">
+        <b-icon
+          icon="shopping-cart"
+          size="is-small"
+          style="margin-right: 0.5rem;"
+        ></b-icon>
+        carrello
+        <!-- <div class="buttons">
           <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
           <a class="button is-light">
             Log in
           </a>
-        </div>
+        </div> -->
       </b-navbar-item>
     </template>
   </b-navbar>
@@ -38,4 +58,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nuxt-link-exact-active {
+  color: #016fb9;
+}
+</style>

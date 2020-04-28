@@ -3,7 +3,9 @@ export const state = () => ({
   books: [],
   book: {},
   currentPage: 1,
-  totalBooks: 10
+  totalBooks: 30,
+  autocompleteData: [],
+  bestBooks: []
 })
 
 export const mutations = {
@@ -18,6 +20,12 @@ export const mutations = {
   },
   SET_TOTAL_NUMBER_OF_BOOKS(state, totalBooks) {
     state.totalBooks = totalBooks
+  },
+  SET_AUTOCOMPLETE_DATA(state, books) {
+    state.autocompleteData = books
+  },
+  SET_BEST_BOOKS(state, books) {
+    state.bestBooks = books.slice(0, 8)
   }
 }
 
@@ -33,10 +41,21 @@ export const actions = {
     return BookService.getBook(id).then((res) => {
       commit('SET_BOOK', res.data)
     })
+  },
+  fetchAutocompleteBooks({ commit }, { name, perPage, page }) {
+    return BookService.getAutocompleteBooks(name, perPage, page).then((res) => {
+      commit('SET_AUTOCOMPLETE_DATA', res.data)
+    })
+  },
+  fetchBestBooks({ commit }) {
+    return BookService.getBestBooks().then((res) => {
+      commit('SET_BEST_BOOKS', res.data)
+    })
   }
 }
 
 export const getters = {
   // totalBooks: (state) => state.books.length,
+  // bestBooks: (state) => state.books.filter((book) => book.best).slice(0, 3),
   getBookById: (state) => (id) => state.books.find((book) => book.id === id)
 }
