@@ -2,7 +2,7 @@
   <div>
     <the-navbar />
     <section>
-      <div class="container">
+      <div>
         <nuxt :nuxt-child-key="$route.fullPath" />
       </div>
     </section>
