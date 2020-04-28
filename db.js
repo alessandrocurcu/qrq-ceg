@@ -3,7 +3,7 @@ const faker = require('faker/locale/it')
 function generateData() {
   const books = []
   const news = []
-  for (let id = 0; id < 30; id++) {
+  for (let id = 0; id < 12; id++) {
     const ISBN = faker.helpers.replaceSymbolWithNumber('#############')
     const title = faker.commerce.productName()
     const price = faker.commerce.price(5, 30, 2, '€ ')

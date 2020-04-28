@@ -236,7 +236,7 @@ export default {
   async fetch({ store, error, query }) {
     try {
       await store.dispatch('books/fetchBooks', {
-        perPage: 12,
+        perPage: 8,
         page: query.page || 1
       })
       await store.dispatch('books/fetchBestBooks')
@@ -250,7 +250,7 @@ export default {
   },
   data() {
     return {
-      perPage: 12,
+      perPage: 8,
       rangeBefore: 1,
       rangeAfter: 1,
       order: 'is-centered',
