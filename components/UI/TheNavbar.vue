@@ -24,7 +24,7 @@
     </template>
 
     <template slot="end">
-      <b-navbar-item tag="router-link" to="/">
+      <b-navbar-item tag="router-link" to="/login">
         <b-icon
           icon="user"
           size="is-small"
@@ -32,7 +32,7 @@
         ></b-icon>
         login
       </b-navbar-item>
-      <b-navbar-item tag="router-link" to="/">
+      <b-navbar-item tag="router-link" to="/carrello">
         <b-icon
           icon="shopping-cart"
           size="is-small"
