@@ -1,10 +1,14 @@
 @import "~bulma/sass/utilities/_all";
 $brand: #E97C15;
+
+$brandBGC: rgb(255, 250, 245);
 $primary: $brand;
 $box-shadow: none;
 // $turquoise: $brand;
 $body-background-color: aliceblue;
 $body-background-color: $white-ter;
+$body-background-color: $brandBGC;
+$hr-background-color: rgb(236, 222, 207);
 
 
 // Paginazione
