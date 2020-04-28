@@ -37,7 +37,7 @@ function generateData() {
     })
   }
 
-  for (let id = 0; id < 6; id++) {
+  for (let id = 0; id < 5; id++) {
     const title = faker.lorem.sentences(1)
     const slug = faker.helpers.slugify(title)
     const text = faker.lorem.sentences(3)
@@ -46,6 +46,7 @@ function generateData() {
       .toISOString()
       .split('T')[0]
     const type = faker.random.boolean()
+    const callout = faker.random.boolean()
 
     news.push({
       id,
@@ -53,6 +54,7 @@ function generateData() {
       title,
       text,
       type,
+      callout,
       // from_userId: fromId,
       published: date
     })

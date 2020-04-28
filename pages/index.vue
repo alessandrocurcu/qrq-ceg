@@ -148,6 +148,27 @@
         </b-pagination-button>
       </b-pagination>
     </section>
+
+    <section class="section">
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <b-icon icon="newspaper" size="is-medium"></b-icon>
+          </div>
+          <div class="level-item">
+            <h1 class="title has-text-weight-normal">
+              Ultime Notizie e Appuntamenti
+            </h1>
+          </div>
+        </div>
+        <div class="level-right">
+          <nuxt-link to="/news" class="level-item has-text-weight-light"
+            >Elenco completo</nuxt-link
+          >
+        </div>
+      </div>
+      <news-tile :news="news" />
+    </section>
   </div>
 </template>
 
@@ -155,12 +176,14 @@
 import debounce from 'lodash/debounce'
 import { mapState } from 'vuex'
 import BookCard from '~/components/Books/BookCard.vue'
+import NewsTile from '~/components/News/NewsTile.vue'
 
 export default {
   scrollToTop: false,
   name: 'HomePage',
   components: {
-    BookCard
+    BookCard,
+    NewsTile
   },
   async fetch({ store, error, query }) {
     try {
