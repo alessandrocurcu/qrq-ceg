@@ -9,7 +9,7 @@ function generateData() {
     const price = faker.commerce.price(5, 30, 2, '€ ')
     const author = faker.name.firstName() + ' ' + faker.name.lastName()
     const slug = faker.helpers.slugify(title)
-    const briefDescription = faker.lorem.sentences(3)
+    const briefDescription = faker.lorem.sentences(6)
     const stock = faker.random.number({ min: 0, max: 10 })
     const coverImage = `https://picsum.photos/id/${faker.random.number({
       min: 0,
