@@ -87,7 +87,7 @@ export default {
    */
   generate: {
     routes: () => {
-      return BookService.getBooks().then((res) => {
+      return BookService.getAllBooks().then((res) => {
         return res.data.map((book) => {
           return '/libro/' + book.id
         })

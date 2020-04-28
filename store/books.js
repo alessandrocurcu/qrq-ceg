@@ -3,7 +3,7 @@ export const state = () => ({
   books: [],
   book: {},
   currentPage: 1,
-  totalBooks: 30,
+  totalBooks: 11,
   autocompleteData: [],
   bestBooks: []
 })

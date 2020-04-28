@@ -1,6 +1,9 @@
 import apiClient from './ApiClient'
 
 export default {
+  getAllBooks() {
+    return apiClient.get(`/books`)
+  },
   getBooks(perPage, page) {
     return apiClient.get(`/books?_limit=${perPage}&_page=${page}`)
   },
