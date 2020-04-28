@@ -210,6 +210,11 @@
         <news-tile :news="news" />
       </div>
     </section>
+    <section class="section">
+      <div class="container has-text-centered">
+        <img style="width: 60%" src="~/assets/reading.svg" alt="" />
+      </div>
+    </section>
   </div>
 </template>
 
