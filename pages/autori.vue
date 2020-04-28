@@ -31,9 +31,9 @@
                 <!-- <p class="title is-4 is-spaced is-marginless"></p> -->
                 <div class="content is-small">
                   <ul>
-                    <li><a href="#">Titolo 1</a></li>
-                    <li><a href="#">Titolo 2</a></li>
-                    <li><a href="#">Titolo 3</a></li>
+                    <li v-for="(libro, i) in autore.libri" :key="i">
+                      <a href="#">{{ libro }}</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -53,47 +53,67 @@ export default {
         {
           name: 'Pino Loperfido',
           img: '1.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1', 'Titolo 2']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Pina Benedetta',
           img: '2.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3', 'Titolo 4', 'Titolo 5']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Lino Ferraro',
           img: '3.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3', 'Titolo 4', 'Titolo 5']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Egidio Conte',
           img: '4.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3', 'Titolo 4']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Leonardo Gentile',
           img: '5.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Zelida Vitale',
           img: '6.png',
           libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Guido Fabbri',
           img: '7.png',
           libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Pierfrancesco Fior',
+          img: '8.png',
+          libri: ['Titolo 1']
+        },
+        {
+          name: 'Ermes Serr',
+          img: '9.png',
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3', 'Titolo 4', 'Titolo 5']
+        },
+        {
+          name: 'Nestore Neri',
+          img: '6.png',
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+        },
+        {
+          name: 'Manuele Morelli',
+          img: '7.png',
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+        },
+        {
+          name: 'Danuta Cont',
           img: '8.png',
           libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
         },
         {
-          name: 'Pino Loperfido',
+          name: 'Diana Damico',
           img: '9.png',
-          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3']
+          libri: ['Titolo 1', 'Titolo 2', 'Titolo 3', 'Titolo 4']
         }
       ]
     }
