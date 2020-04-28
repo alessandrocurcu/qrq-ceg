@@ -52,7 +52,18 @@
       </b-carousel>
     </section>
     <section class="section">
-      <h1 class="title">I nostri libri</h1>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <b-icon icon="book" size="is-medium"></b-icon>
+          </div>
+          <div class="level-item">
+            <h1 class="title has-text-weight-normal">
+              I nostri libri
+            </h1>
+          </div>
+        </div>
+      </div>
       <b-field label="Ricerca per titolo o autore">
         <b-autocomplete
           :data="autocompleteData"
@@ -90,6 +101,7 @@
           </template>
         </b-autocomplete>
       </b-field>
+
       <div class="columns is-multiline">
         <book-card
           v-for="book in books"
@@ -301,3 +313,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.label {
+  font-weight: 300 !important;
+}
+</style>
